@@ -1,6 +1,7 @@
 // ----------------------------------------------------//
 // Se crean las instancias de las librerias a utilizar //
 // ----------------------------------------------------//
+//HOLA
 try{
   var modbus = require('jsmodbus');
   var fs = require('fs');
