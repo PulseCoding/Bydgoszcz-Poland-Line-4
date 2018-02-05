@@ -15,7 +15,7 @@ var client = modbus.client.tcp.complete({
     'reconnectTimeout': 30000
 }).connect();
 
-var intId,timeStop=250,flagONS1=0,flagONS2=0,flagONS3=0,flagONS4=0,flagONS5=0,flagONS6=0,flagONS7=0,flagONS8=0,flagONS9=0,flagONS10=0,flagONS11=0;
+var intId,timeStop=300,flagONS1=0,flagONS2=0,flagONS3=0,flagONS4=0,flagONS5=0,flagONS6=0,flagONS7=0,flagONS8=0,flagONS9=0,flagONS10=0,flagONS11=0;
 var BottleSorter,ctBottleSorter=0,speedTempBottleSorter=0,secBottleSorter=0,stopCountBottleSorter=0,flagStopBottleSorter=0,flagPrintBottleSorter=0,speedBottleSorter=0,timeBottleSorter=0;
 var actualBottleSorter=0,stateBottleSorter=0;
 var Filler,ctFiller=0,speedTempFiller=0,secFiller=0,stopCountFiller=0,flagStopFiller=0,flagPrintFiller=0,speedFiller=0,timeFiller=0;
@@ -70,7 +70,7 @@ var DoRead = function (){
       for ( k=0;k<files.length;k++){//Verificar los archivos
         var stats = fs.statSync("/home/oee/Pulse/BYD_L4_LOGS/"+files[k]);
         var mtime = new Date(stats.mtime).getTime();
-        if (mtime< (Date.now() - (3*60*1000))&&files[k].indexOf("serialbox")==-1){
+        if (mtime< (Date.now() - (10*60*1000))&&files[k].indexOf("serialbox")==-1){
           flagInfo2Send=1;
           text2send[i]=files[k];
           i++;
